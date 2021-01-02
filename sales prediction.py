@@ -41,3 +41,22 @@ plt1 = sns.boxplot(df['TV'], ax = axs[0])
 plt2 = sns.boxplot(df['Newspaper'], ax = axs[1])
 plt3 = sns.boxplot(df['Radio'], ax = axs[2])
 plt.tight_layout()
+
+
+plt.scatter(df.TV,df.Sales)
+
+
+sns.pairplot(df, x_vars=['TV', 'Newspaper', 'Radio'], y_vars='Sales', height=4, aspect=1, kind='scatter')
+plt.show()
+
+
+plt.imshow(df, cmap='hot', interpolation='nearest')
+
+# Let's see the correlation between different variables.
+sns.heatmap(df.corr(), cmap="YlGnBu", annot = True)
+plt.show()
+
+
+
+X = df['TV']
+y = df['Sales']
